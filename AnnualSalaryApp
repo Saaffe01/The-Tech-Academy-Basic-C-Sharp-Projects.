@@ -1,0 +1,53 @@
+using System;
+
+namespace AnnualSalaryApp;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Print the header
+        Console.WriteLine("Anonymous Income Comparison Program");
+
+        // person 1 details
+        Console.WriteLine("Person 1");
+        Console.Write("Hourly Rate: ");
+        string p1RateInput = Console.ReadLine();
+        Console.Write("Hours worked per week: ");
+        string p1HoursInput = Console.ReadLine();
+
+        // person 2 details
+        Console.WriteLine("Person 2");
+        Console.Write("Hourly rate: ");
+        string p2RateInput = Console.ReadLine();
+        Console.Write("Hours worked per week: ");
+        string p2HoursInput = Console.ReadLine();
+
+        // here we use data conversion. string to decimals
+        decimal p1Rate = Convert.ToDecimal(p1RateInput);
+        decimal p1Hours = Convert.ToDecimal(p1HoursInput);
+        decimal p2Rate = Convert.ToDecimal(p2RateInput);
+        decimal p2Hours = Convert.ToDecimal(p2HoursInput);
+
+        // calculations
+        decimal p1Annual = p1Rate * p1Hours * 52;
+        decimal p2Annual = p2Rate * p2Hours * 52;
+
+        // displaying annual salary
+        Console.WriteLine("Annual salary of Person 1:");
+        Console.WriteLine(p1Annual);
+
+        // annual salary for person 2
+        Console.WriteLine("Annual salary of Person 2:");
+        Console.WriteLine(p2Annual);
+
+        // this shows the result of the output
+        bool isP1Higher = p1Annual > p2Annual;
+        Console.WriteLine("Does Person 1 make more money than Person 2?");
+        Console.WriteLine(isP1Higher);
+
+        
+        Console.WriteLine("\nPress any key to exit.");
+        Console.ReadKey();
+    }
+}
