@@ -9,10 +9,12 @@ class Program
         var numbers = new List<int>() { 10, 25, 50, 100, 200 };
         
         Console.WriteLine("Pick a number to divide from the list");
-        int numbersDivided = Convert.ToInt32(Console.ReadLine());
+
 
         try
         {
+            int numbersDivided = Convert.ToInt32(Console.ReadLine());
+            
             foreach (var number in numbers)
             {
                 Console.WriteLine(number / numbersDivided); // number selected from user is divided by 2.
