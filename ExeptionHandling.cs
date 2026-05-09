@@ -17,16 +17,16 @@ class Program
             
             foreach (var number in numbers)
             {
-                Console.WriteLine(number / numbersDivided); // number selected from user is divided by 2.
+                Console.WriteLine(number / numbersDivided); // divides the number from user input
             }
         } // catching first exception when divided by Zero 
         catch (DivideByZeroException ex)
         {
-            Console.WriteLine(ex.Message + "Please do not divider by zero"); // Lets user know that input cannot be 0 
+            Console.WriteLine(ex.Message + " Please do not divide by zero"); // Lets user know that input cannot be 0 
         }
         catch (FormatException ex)
         {
-            Console.WriteLine(ex.Message + "Please do not divide by string"); // Lets user know input cannot be a string
+            Console.WriteLine(ex.Message + " Please do not divide by string"); // Lets user know input cannot be a string
         }
         Console.WriteLine("Program has continued after the try/catch block!");
     }
