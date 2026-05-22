@@ -1,6 +1,6 @@
 namespace Polymorphism;
 
-public interface IQuitable
+public interface IQuitable // Interface that defines the Quit behavior 
 {
-    void Quit();
+    void Quit(); // Method signature 
 }
