@@ -1,28 +1,38 @@
-﻿namespace MethodSubmission;
+﻿using System.Data;
+
+namespace ParsingEnums;
+
+// Enum representing the days of the week
+enum DayOfWeek
+{
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday
+}
 
 class Program
 {
     static void Main(string[] args)
     {
-        // Prompt for user to get first number
-        Console.WriteLine("Enter the first number: ");
-        int firstNumber = int.Parse(Console.ReadLine());
+        // Prompting the user to enter day of the week
+        Console.WriteLine("Enter the current day of the week: ");
         
-        // Prompt for user to let them know it's optional
-        Console.WriteLine("Enter the second number: ");
-        string secondInput = Console.ReadLine();
+        // Store users input
+        string input = Console.ReadLine();
 
-        var math = new Mathematics();
-
-        // checks if they entered a 2nd number
-        if (secondInput == "")
+        try // try to parse the string input into dayofweek enum
         {
-            Console.WriteLine(math.Calculate(firstNumber));
+            DayOfWeek day = Enum.Parse<DayOfWeek>(input);
+            Console.WriteLine("You entered: " + day);
         }
-        else
+        catch 
         {
-            int secondNumber = int.Parse(secondInput);
-            Console.WriteLine(math.Calculate(firstNumber, secondNumber));
+            // if parsing fails, inform user input was invalid
+            Console.WriteLine("Please enter an actual day of the week.");
         }
     }
-} 
+}
